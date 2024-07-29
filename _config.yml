@@ -1,7 +1,7 @@
 # Read about configuration here: https://jekyllrb.com/docs/configuration/options/
-title: Client Diversity | Ethereum
-description: Improve Ethereum's resilience and protect the network by using a minority client.
-keywords: ethereum, client, diversity, eth, beacon, chain
+title: Client Diversity | LUKSO
+description: Improve LUKSO's resilience and protect the network by using a minority client.
+keywords: ethereum, lukso, client, diversity, eth, beacon, chain
 url: https://clientdiversity.org
 permalink: pretty # Do not change this, it will break all links
 timezone: America/New_York
