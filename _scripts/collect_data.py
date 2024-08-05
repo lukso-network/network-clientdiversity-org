@@ -162,13 +162,6 @@ def pprint(data):
   pp.pprint(data)
 
 
-########################################
-
-
-
-########################################
-
-
 def get_blockprint_marketshare_data():  
   initial_timestamp = 1684856400
   initial_epoch = 0
@@ -182,12 +175,6 @@ def get_blockprint_marketshare_data():
   end_epoch = math.floor(current_epoch / 225) * 225
   start_epoch = end_epoch - 3150
   url = f"{blockprint_api_addr}/blocks_per_client/{start_epoch}/{end_epoch}"
-  response = fetch_json(url)
-  return response
-
-def get_blockprint_accuracy_data():
-  # accuracy of fingerprinting for each client
-  url = f"{blockprint_api_addr}/confusion"
   response = fetch_json(url)
   return response
 
@@ -220,20 +207,15 @@ def process_blockprint_accuracy_data(raw_data):
   #         'false_negatives': {'Nimbus': 20, 'Prysm': 17}, 'latest_slot': 7102453}
   #     ]}}
 
-  # calculate the accuracy for each client
+  # Since we dont have the same functional API as blockscout we cant really get the accuracy from our nodes
+  # TODO: Remove the accuracy altogether
   accuracy_data = []
   for key, value in raw_data["data"]["clients"].items():
-    if (value["true_positives"] == 0 and value["false_negatives"] == 0):
-      accuracy = "no data";
-    elif (value["true_positives"] == 0 and value["false_negatives"] != 0):
-      accuracy = "0";
-    else:
-      accuracy = round(value["true_positives"] / (value["true_positives"] + value["false_negatives"]), 6)
-    accuracy_data.append({"name": key.lower(), "value": accuracy})
+    accuracy_data.append({"name": key.lower(), "value": "no data"})
   print_data("processed", accuracy_data, "blockprint_accuracy_data")
   return accuracy_data
 
-def process_blockprint_marketshare_data(raw_marketshare_data, processed_accuracy_data):
+def process_blockprint_marketshare_data(raw_marketshare_data):
   # example blockprint raw data:
   # raw_marketshare_data = {'status': 200, 'attempts': 1, 'data': {
   #   'Uncertain': 0, 
@@ -262,6 +244,7 @@ def process_blockprint_marketshare_data(raw_marketshare_data, processed_accuracy
   # pprint(["reformatted_data", reformatted_data])
   # pprint(["sample_size", sample_size])
 
+  pprint(reformatted_data)
   # filter out items either under the threshold and not in the main_clients list
   for item in reformatted_data:
     if item["name"] in main_clients:
@@ -276,10 +259,7 @@ def process_blockprint_marketshare_data(raw_marketshare_data, processed_accuracy
   for item in filtered_data:
     marketshare = item["value"] / sample_size
     accuracy = "no data"
-    for x in processed_accuracy_data:
-      if x["name"] == item["name"]:
-        accuracy = x["value"]
-    marketshare_data.append({"name": item["name"], "value": marketshare, "accuracy": accuracy})
+    marketshare_data.append({"name": item["name"], "value": marketshare, "accuracy": "no data"})
   # pprint(["marketshare_data", marketshare_data])
 
   # sort the list by marketshare descending
@@ -311,10 +291,7 @@ def process_blockprint_marketshare_data(raw_marketshare_data, processed_accuracy
 def blockprint_marketshare():
   raw_marketshare_data = get_blockprint_marketshare_data()
   save_to_file("../_data/raw/blockprint_raw.json", raw_marketshare_data)
-  raw_accuracy_data = get_blockprint_accuracy_data()
-  save_to_file("../_data/raw/blockprint_accuracy_raw.json", raw_accuracy_data)
-  processed_accuracy_data = process_blockprint_accuracy_data(raw_accuracy_data)
-  processed_marketshare_data = process_blockprint_marketshare_data(raw_marketshare_data, processed_accuracy_data)
+  processed_marketshare_data = process_blockprint_marketshare_data(raw_marketshare_data)
   save_to_file("../_data/blockprint.json", processed_marketshare_data)
 
 
