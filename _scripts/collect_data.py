@@ -3,7 +3,6 @@ import os
 import math
 import time
 import json
-import copy
 import pprint
 from datetime import datetime, timezone
 
@@ -179,42 +178,6 @@ def get_blockprint_marketshare_data():
   return response
 
 
-def process_blockprint_accuracy_data(raw_data):
-  # example blockprint raw data:
-  # raw_data = {'status': 200, 'attempts': 1, 'data': {
-  #   'clients': {
-  #     'Lighthouse': {
-  #       'true_positives': 3644, 'true_negatives': 6921, 'false_positives': 377, 
-  #       'false_negatives': 37, 'false_negatives_detail': {'Nimbus': 20, 'Prysm': 17}}, 
-  #     'Nimbus': {
-  #       'true_positives': 0, 'true_negatives': 10822, 'false_positives': 157, 
-  #       'false_negatives': 0, 'false_negatives_detail': {}}, 
-  #     'Prysm': {
-  #       'true_positives': 5147, 'true_negatives': 5387, 'false_positives': 36, 
-  #       'false_negatives': 409, 'false_negatives_detail': {'Lighthouse': 376, 'Nimbus': 30, 'Teku': 3}}, 
-  #     'Teku': {
-  #       'true_positives': 1615, 'true_negatives': 9234, 'false_positives': 3, 
-  #       'false_negatives': 127, 'false_negatives_detail': {'Lighthouse': 1, 'Nimbus': 107, 'Prysm': 19}}
-  #     }, 
-  #     'nodes': [
-  #       {'name': 'prysm-subscribe-all', 'label': 'Prysm', 'true_positives': 3648, 
-  #         'false_negatives': {'Lighthouse': 3, 'Nimbus': 28, 'Teku': 2}, 'latest_slot': 7102453}, 
-  #       {'name': 'prysm-subscribe-none', 'label': 'Prysm', 'true_positives': 1499, 
-  #         'false_negatives': {'Lighthouse': 373, 'Nimbus': 2, 'Teku': 1}, 'latest_slot': 7102453}, 
-  #       {'name': 'teku-subscribe-all', 'label': 'Teku', 'true_positives': 1615, 
-  #         'false_negatives': {'Lighthouse': 1, 'Nimbus': 107, 'Prysm': 19}, 'latest_slot': 7102453}, 
-  #       {'name': 'lighthouse-subscribe-none', 'label': 'Lighthouse', 'true_positives': 3644, 
-  #         'false_negatives': {'Nimbus': 20, 'Prysm': 17}, 'latest_slot': 7102453}
-  #     ]}}
-
-  # Since we dont have the same functional API as blockscout we cant really get the accuracy from our nodes
-  # TODO: Remove the accuracy altogether
-  accuracy_data = []
-  for key, value in raw_data["data"]["clients"].items():
-    accuracy_data.append({"name": key.lower(), "value": "no data"})
-  print_data("processed", accuracy_data, "blockprint_accuracy_data")
-  return accuracy_data
-
 def process_blockprint_marketshare_data(raw_marketshare_data):
   # example blockprint raw data:
   # raw_marketshare_data = {'status': 200, 'attempts': 1, 'data': {
@@ -258,7 +221,6 @@ def process_blockprint_marketshare_data(raw_marketshare_data):
   # calculate the marketshare for each client
   for item in filtered_data:
     marketshare = item["value"] / sample_size
-    accuracy = "no data"
     marketshare_data.append({"name": item["name"], "value": marketshare, "accuracy": "no data"})
   # pprint(["marketshare_data", marketshare_data])
 
@@ -299,9 +261,10 @@ def blockprint_marketshare():
 
 
 def get_node_crawler_marketshare_data():
-  url = f"{node_crawler_api_addr}/dashboard"
+  url = f"{node_crawler_api_addr}/v1/dashboard"
   response = fetch_json(url)
   return response
+
 
 def process_node_crawler_marketshare_data(raw_data):
   # {
@@ -326,10 +289,13 @@ def process_node_crawler_marketshare_data(raw_data):
   extra_data = {}
   final_data = {}
 
+  pprint(raw_data)
   # reformat data into a list of dicts
-  for item in raw_data["clients"]:
+  for item in raw_data["data"]["clients"]:
+    pprint(item)
+    pprint("##### I AM HEREEEEEEEEEE #### ")
     reformatted_data.append({"name": item["name"].lower(), "value": item["count"]})
-    sample_size += item["value"]
+    sample_size += item["count"]
   # pprint(["reformatted_data", reformatted_data])
   # pprint(["sample_size", sample_size])
 
@@ -382,7 +348,7 @@ def node_crawler_marketshare():
 
 
 def get_data():
-  blockprint_marketshare()
+  # blockprint_marketshare()
   node_crawler_marketshare()
 
 
