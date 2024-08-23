@@ -24,8 +24,8 @@ exit_on_report_error = False
 google_form_error_report_url = os.environ.get("")
 
 # URLS
-blockprint_api_addr = "http://34.140.62.68:8000"
-node_crawler_api_addr = "http://34.140.62.68:10000"
+blockprint_api_addr = os.environ.get("BLOCKPRINT_API_BASE_URL")
+node_crawler_api_addr = os.environ.get("NODE_CRAWLER_API_BASE_URL")
 
 # enter values for local testing
 # rated_token = ""

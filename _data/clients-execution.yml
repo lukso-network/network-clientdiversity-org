@@ -105,6 +105,7 @@
   lang: Rust
   donate:
   opensource: true
+  lukso_supported: false
 - name: Silkworm
   link: https://github.com/torquem-ch/silkworm#about-silkworm
   github: https://github.com/torquem-ch/silkworm
