@@ -19,6 +19,7 @@
                 <th scope="col">Support</th>
                 <th scope="col">Language</th>
                 <th scope="col">Donate</th>
+                <th scope="col">LUKSO</th>
               </tr>
             </thead>
             <tbody>
@@ -114,6 +115,11 @@
                   {%- else -%}
                     <td>-</td>
                   {%- endif -%}
+                  {%- if client.lukso_supported -%}
+                    <td>{{client.lukso_supported}}</td>
+                  {%- else -%}
+                    <td>-</td>
+                  {%- endif -%}
                 </tr>
               {%- endfor -%}
             </tbody>
@@ -134,6 +140,7 @@
                 <th scope="col">Support</th>
                 <th scope="col">Language</th>
                 <th scope="col">Donate</th>
+                <th scope="col">LUKSO</th>
               </tr>
             </thead>
             <tbody>
@@ -226,6 +233,11 @@
                         <td>{{client.donate}}</td>
                       {%- endif -%}
                     {%- endif -%}
+                  {%- else -%}
+                    <td>-</td>
+                  {%- endif -%}
+                  {%- if client.lukso_supported -%}
+                    <td>{{client.lukso_supported}}</td>
                   {%- else -%}
                     <td>-</td>
                   {%- endif -%}

@@ -1,6 +1,6 @@
 # clientdiversity-org
 
-This is the repo for <https://clientdiversity.org>, a resource site to assist client diversity efforts. This project is maintained by [Ether Alpha](https://etheralpha.org/).
+This is the repo for <https://diversity.lukso.network>, a resource site to assist client diversity efforts. This project is maintained by [Ether Alpha](https://etheralpha.org/).
 
 ## Local Setup
 

@@ -1,8 +1,8 @@
 # Read about configuration here: https://jekyllrb.com/docs/configuration/options/
-title: Client Diversity | Ethereum
-description: Improve Ethereum's resilience and protect the network by using a minority client.
-keywords: ethereum, client, diversity, eth, beacon, chain
-url: https://clientdiversity.org
+title: Client Diversity | LUKSO
+description: Improve LUKSO's resilience and protect the network by using a minority client.
+keywords: ethereum, lukso, client, diversity, eth, beacon, chain
+url: https://diversity.lukso.network
 permalink: pretty # Do not change this, it will break all links
 timezone: America/New_York
 markdown: kramdown
@@ -28,7 +28,7 @@ analytics_tag: |
     gtag('config', 'G-5YPSBBTM6W');
   </script>
 default_consensus_source: blockprint # Options: blockprint, migalabs, rated 
-default_execution_source: supermajority # Options: ethernodes, supermajority
+default_execution_source: node_crawler # Options: node crawler 
 
 # Notification Bar
 enable_notification: false

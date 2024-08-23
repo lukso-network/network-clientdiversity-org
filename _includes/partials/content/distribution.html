@@ -99,44 +99,22 @@
             <h3 class="p-2 mb-4">Execution Clients</h3>
             <!-- Execution Client Alerts -->
               <div class="d-none">
-                {%- assign ethernodes = site.data.ethernodes | last -%}
-                {%- include partials/components/alert.html data=ethernodes.data.other type="execution" -%}
+                {%- assign node_crawler = site.data.node_crawler | last -%}
+                {%- include partials/components/alert.html data=node_crawler.data.other type="execution" -%}
               </div>
-              {%- assign supermajority = site.data.supermajority | last -%}
-              {%- include partials/components/alert.html data=supermajority.data.other type="execution" -%}
-            <!-- Ethernodes Data -->
+            <!-- Node Crawler -->
             {%- assign visibility = "d-none" -%}
-            {%- if site.default_execution_source == "ethernodes" -%}
+            {%- if site.default_execution_source == "node_crawler" -%}
               {%- assign visibility = "" -%}
             {%- endif -%}
-            <div class="{{visibility}} text-start flex-grow-1 ethernodes execution-data">
-              <div class="">
-                <p>The <a href="https://ethernodes.org" target="_blank">Ethernodes</a> data has been removed.</p>
-                <p>The data is a representation of what clients are showing free peers and it's not well understood how this correlates to an overall picture of what clients are currently in use. For now, survey data (from <a href="https://execution-diversity.info" target="_blank">execution-diversity.info</a>) is considered the most reliable source of information for the state of execution client diversity.</p>
-                <p><a class="new-tab" href="https://paragraph.xyz/@ethstaker/new-clientdiversity-data" target="_blank">Read more {{site.data.icons.arrow_right}}</a></p>
-              </div>
-              <div class="d-none">
-                {%- assign ethernodes = site.data.ethernodes | last -%}
-                {%- include partials/components/progress-bar.html data=ethernodes.data.distribution -%}
-              </div>
-              <div class="d-none text-center small">
-                Data provided by <a href="https://ethernodes.org" target="_blank">Ethernodes</a> — updated daily. <br>
-                Data may not be 100% accurate. (<a href="/methodology">Read more</a>)
-              </div>
-            </div>
-            <!-- Execution-Diversity.info Data -->
-            {%- assign visibility = "d-none" -%}
-            {%- if site.default_execution_source == "supermajority" -%}
-              {%- assign visibility = "" -%}
-            {%- endif -%}
-            <div class="{{visibility}} text-start flex-grow-1 supermajority execution-data">
-              {%- assign supermajority = site.data.supermajority | last -%}
-              {%- assign supermajority_coverage = supermajority.data.other.validators_percentage | times: 100 | round: 1 -%}
-              {%- include partials/components/progress-bar.html data=supermajority.data.distribution round=true -%}
+            <div class="{{visibility}} text-start flex-grow-1 node_crawler execution-data">
+              {%- assign node_crawler = site.data.node_crawler | last -%}
+              {%- assign node_crawler_coverage = node_crawler.data.other.validators_percentage | times: 100 | round: 1 -%}
+              {%- include partials/components/progress-bar.html data=node_crawler.data.distribution round=true -%}
               <div class="text-center small">
-                Data provided by <a href="http://supermajority.info/" target="_blank">supermajority.info</a> — updated manually. <br>
+                Data provided by <a href="https://github.com/ethereum/node-crawler" target="_blank">Ethereum's Node crawler</a> — updated automatically. <br>
                 Data may not be 100% accurate. (<a href="/methodology">Read more</a>) <br>
-                <p class="mt-2 mb-0 fw-bold">Based on {{supermajority_coverage}}% self-reported network coverage with the remaining assumed to be mostly Geth.</p>
+                <p class="mt-2 mb-0 fw-bold">Based on {{node_crawler_coverage}}% self-reported network coverage with the remaining assumed to be mostly Geth.</p>
               </div>
             </div>
             <!-- Select Data Source -->
@@ -147,20 +125,12 @@
                   <a href="/methodology" style="color: #055160;">(read more)</a>:
                 </div>
                 {%- assign checked = "" -%}
-                {%- if site.default_execution_source == "supermajority" -%}
+                {%- if site.default_execution_source == "node_crawler" -%}
                   {%- assign checked = "checked" -%}
                 {%- endif -%}
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="datasourcesEC" id="dataSourceEC2" value="supermajority"  onclick="setDataSource('supermajority', 'execution');" {{checked}}>
-                  <label class="form-check-label" for="dataSourceEC2">Supermajority.info</label>
-                </div>
-                {%- assign checked = "" -%}
-                {%- if site.default_execution_source == "ethernodes" -%}
-                  {%- assign checked = "checked" -%}
-                {%- endif -%}
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="datasourcesEC" id="dataSourceEC1" value="ethernodes"  onclick="setDataSource('ethernodes', 'execution');" {{checked}}>
-                  <label class="form-check-label" for="dataSourceEC1">Ethernodes</label>
+                  <input class="form-check-input" type="radio" name="datasourcesEC" id="dataSourceEC2" value="node_crawler"  onclick="setDataSource('node_crawler', 'execution');" {{checked}}>
+                  <label class="form-check-label" for="dataSourceEC2">Node crawler</label>
                 </div>
               </div>
             </div>

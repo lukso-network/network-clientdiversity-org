@@ -1,14 +1,14 @@
-# - name:       # client name
-#   link:       # link to website
-#   github:     # link to github
-#   docs:       # link to documentation
-#   chat:       # link to community chat
-#   status:     # (select one) alpha, beta, stable
-#   support:    # Linux, Win, macOS, ARM
-#   lang        # programming language it's written in
-#   donate:     # link to gitcoin or etherscan address
-#   opensource: # true/false
-
+# - name:            # client name
+#   link:            # link to website
+#   github:          # link to github
+#   docs:            # link to documentation
+#   chat:            # link to community chat
+#   status:          # (select one) alpha, beta, stable
+#   support:         # Linux, Win, macOS, ARM
+#   lang             # programming language it's written in
+#   donate:          # link to gitcoin or etherscan address
+#   opensource:      # true/false
+#   lukso_supported: # true/false 
 
 - name: Grandine
   link: https://grandine.io/
@@ -19,6 +19,7 @@
   support: Linux, Win, macOS
   donate: 
   opensource: true
+  lukso_supported: false
 - name: Lighthouse
   link: https://lighthouse.sigmaprime.io/
   github: https://github.com/sigp/lighthouse/
@@ -29,6 +30,7 @@
   lang: Rust
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
+  lukso_supported: true
 - name: Lodestar
   link: https://lodestar.chainsafe.io/
   github: https://github.com/ChainSafe/lodestar
@@ -40,6 +42,7 @@
   lang: TypeScript
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
+  lukso_supported: false
 - name: Nimbus
   link: https://nimbus.team/
   github: https://github.com/status-im/nimbus-eth2
@@ -50,6 +53,7 @@
   lang: Nim
   donate: 
   opensource: true
+  lukso_supported: false
 - name: Prysm
   link: https://prysmaticlabs.com/
   github: https://github.com/prysmaticlabs/prysm
@@ -61,6 +65,7 @@
   # donate: funded # Supported by Offchain Labs
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
+  lukso_supported: true
 - name: Teku
   link: https://consensys.net/knowledge-base/ethereum-2/teku/
   github: https://github.com/ConsenSys/teku
@@ -72,4 +77,5 @@
   # donate: funded # funded by ConsenSys
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
+  lukso_supported: true
 

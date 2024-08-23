@@ -1,14 +1,14 @@
-# - name:       # client name
-#   link:       # link to website
-#   github:     # link to github
-#   docs:       # link to documentation
-#   chat:       # link to community chat
-#   status:     # (select one) deprecated, pre-alpha, alpha, beta, stable
-#   support:    # Linux, Win, macOS, ARM
-#   lang        # programming language it's written in
-#   donate:     # link to gitcoin or etherscan address
-#   opensource: # true/false
-
+# - name:            # client name
+#   link:            # link to website
+#   github:          # link to github
+#   docs:            # link to documentation
+#   chat:            # link to community chat
+#   status:          # (select one) deprecated, pre-alpha, alpha, beta, stable
+#   support:         # Linux, Win, macOS, ARM
+#   lang             # programming language it's written in
+#   donate:          # link to gitcoin or etherscan address
+#   opensource:      # true/false
+#   lukso_supported: # whether LUKSO provides official configurations for a specific client: true/false
 
 - name: Akula
   link: 
@@ -19,6 +19,7 @@
   support: 
   donate: https://etherscan.io/address/0x048a9ea34FcE0B2828a2703e486648c21ACCCC1A
   opensource: true
+  lukso_supported: false
 - name: Besu
   link: https://hyperledger.org/use/besu
   github: https://github.com/hyperledger/besu/
@@ -29,6 +30,7 @@
   lang: Java
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
+  lukso_supported: true
 - name: Erigon
   link: https://github.com/ledgerwatch/erigon#erigon
   github: https://github.com/ledgerwatch/erigon
@@ -39,6 +41,7 @@
   lang: Golang
   donate: https://etherscan.io/address/0x8BFBB529A9E85fDC4b70A4FCdC0D68Bb298B8816 # funded by EF, Gnosis DAO
   opensource: true
+  lukso_supported: true
 - name: EthereumJS
   link: https://ethereumjs.github.io/
   github: https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/client
@@ -49,6 +52,7 @@
   lang: TypeScript
   donate: funded # funded by EF
   opensource: true
+  lukso_supported: false
 - name: Geth
   link: https://geth.ethereum.org/
   github: https://github.com/ethereum/go-ethereum
@@ -59,6 +63,7 @@
   lang: Golang
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
+  lukso_supported: true
 - name: Nethermind
   link: http://nethermind.io/
   github: https://github.com/NethermindEth/nethermind
@@ -69,6 +74,7 @@
   lang: .NET
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
+  lukso_supported: true
 - name: Nimbus
   link: https://nimbus.team/
   github: https://github.com/status-im/nimbus-eth1
@@ -79,6 +85,7 @@
   lang: Nim
   donate: 
   opensource: true
+  lukso_supported: false
 # - name: OpenEthereum
 #   link: https://openethereum.org/
 #   github: https://github.com/openethereum/openethereum
@@ -98,6 +105,7 @@
   lang: Rust
   donate:
   opensource: true
+  lukso_supported: false
 - name: Silkworm
   link: https://github.com/torquem-ch/silkworm#about-silkworm
   github: https://github.com/torquem-ch/silkworm
@@ -108,3 +116,4 @@
   lang: C++
   donate: https://etherscan.io/address/0x8BFBB529A9E85fDC4b70A4FCdC0D68Bb298B8816
   opensource: true
+  lukso_supported: false
