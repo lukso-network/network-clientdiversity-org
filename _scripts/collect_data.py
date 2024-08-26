@@ -261,8 +261,9 @@ def blockprint_marketshare():
 
 
 def get_node_crawler_marketshare_data():
-  url = f"{node_crawler_api_addr}/v1/dashboard"
+  url = f'{node_crawler_api_addr}/v1/dashboard?filter=[["name:geth"],["name:erigon"],["name:nethermind"],["name:besu"]]'
   response = fetch_json(url)
+  pprint(response)
   return response
 
 
@@ -293,7 +294,6 @@ def process_node_crawler_marketshare_data(raw_data):
   # reformat data into a list of dicts
   for item in raw_data["data"]["clients"]:
     pprint(item)
-    pprint("##### I AM HEREEEEEEEEEE #### ")
     reformatted_data.append({"name": item["name"].lower(), "value": item["count"]})
     sample_size += item["count"]
   # pprint(["reformatted_data", reformatted_data])
