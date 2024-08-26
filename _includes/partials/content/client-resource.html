@@ -5,13 +5,14 @@
       <h2 class="h1 fw-bold mb-2">Client Resources</h2>
     </div>
     <div class="row justify-content-evenly mt-4">
-      <div class="col col-xxl-8 col-xl-9 col-lg-10 col-md-11">
+      <div class="col col-xxl-10 col-xl-10 col-lg-10 col-md-11">
         <h3 class="mb-3">Consensus Clients</h3>
         <div class="table-responsive">
           <table class="table table-bordered mb-2">
             <thead class="">
               <tr>
                 <th scope="col" style="min-width: 8rem;">Client</th>
+                <th scope="col" style="min-width: 9rem;">Supported Version</th>
                 <th scope="col">Github</th>
                 <th scope="col" style="min-width: 3.8rem;">Docs</th>
                 <th scope="col">Chat</th>
@@ -35,6 +36,13 @@
                       {{client.name}}
                     {%- endif -%}
                   </th>
+                    <td>
+                      {%- if client.support_version != "" -%}
+                        <p>{{client.supported_version}}</p>
+                      {%- else -%}
+                        <p>-</p>
+                      {%- endif -%}
+                    </td>
                   {%- if client.github -%}
                     <td>
                       <a href="{{client.github}}" class="text-decoration-none" target="_blank">
@@ -116,7 +124,7 @@
                     <td>-</td>
                   {%- endif -%}
                   {%- if client.lukso_supported -%}
-                    <td>{{client.lukso_supported}}</td>
+                    <td><span class="text-success">{{site.data.icons.checkmark}}</span></td>
                   {%- else -%}
                     <td>-</td>
                   {%- endif -%}
@@ -126,13 +134,14 @@
           </table>
         </div>
       </div>
-      <div class="col col-xxl-8 col-xl-9 col-lg-10 col-md-11 mt-5">
+      <div class="col col-xxl-10 col-xl-10 col-lg-10 col-md-11 mt-5">
         <h3 class="mb-3">Execution Clients</h3>
         <div class="table-responsive">
           <table class="table table-bordered mb-2">
             <thead class="">
               <tr>
                 <th scope="col" style="min-width: 8rem;">Client</th>
+                <th scope="col" style="min-width: 9rem;">Supported Version</th>
                 <th scope="col">Github</th>
                 <th scope="col" style="min-width: 3.8rem;">Docs</th>
                 <th scope="col">Chat</th>
@@ -156,6 +165,13 @@
                       {{client.name}}
                     {%- endif -%}
                   </th>
+                    <td>
+                      {%- if client.support_version != "" -%}
+                        <p>{{client.supported_version}}</p>
+                      {%- else -%}
+                        <p>-</p>
+                      {%- endif -%}
+                    </td>
                   {%- if client.github -%}
                     <td>
                       <a href="{{client.github}}" class="text-decoration-none" target="_blank">
@@ -237,7 +253,7 @@
                     <td>-</td>
                   {%- endif -%}
                   {%- if client.lukso_supported -%}
-                    <td>{{client.lukso_supported}}</td>
+                    <td><span class="text-success">{{site.data.icons.checkmark}}</span></td>
                   {%- else -%}
                     <td>-</td>
                   {%- endif -%}
