@@ -37,7 +37,7 @@
                     {%- endif -%}
                   </th>
                     <td>
-                      {%- if client.support_version != "" -%}
+                      {%- if client.supported_version -%}
                         {{client.supported_version}}
                       {%- else -%}
                         -
@@ -166,7 +166,7 @@
                     {%- endif -%}
                   </th>
                     <td>
-                      {%- if client.support_version != "" -%}
+                      {%- if client.supported_version -%}
                         {{client.supported_version}}
                       {%- else -%}
                         -
