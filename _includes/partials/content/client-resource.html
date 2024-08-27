@@ -38,9 +38,9 @@
                   </th>
                     <td>
                       {%- if client.support_version != "" -%}
-                        <p>{{client.supported_version}}</p>
+                        {{client.supported_version}}
                       {%- else -%}
-                        <p>-</p>
+                        -
                       {%- endif -%}
                     </td>
                   {%- if client.github -%}
@@ -167,9 +167,9 @@
                   </th>
                     <td>
                       {%- if client.support_version != "" -%}
-                        <p>{{client.supported_version}}</p>
+                        {{client.supported_version}}
                       {%- else -%}
-                        <p>-</p>
+                        -
                       {%- endif -%}
                     </td>
                   {%- if client.github -%}
