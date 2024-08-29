@@ -1,14 +1,15 @@
-# - name:            # client name
-#   link:            # link to website
-#   github:          # link to github
-#   docs:            # link to documentation
-#   chat:            # link to community chat
-#   status:          # (select one) alpha, beta, stable
-#   support:         # Linux, Win, macOS, ARM
-#   lang             # programming language it's written in
-#   donate:          # link to gitcoin or etherscan address
-#   opensource:      # true/false
-#   lukso_supported: # true/false 
+# - name:             # client name
+#   link:             # link to website
+#   github:           # link to github
+#   docs:             # link to documentation
+#   chat:             # link to community chat
+#   status:           # (select one) alpha, beta, stable
+#   support:          # Linux, Win, macOS, ARM
+#   lang              # programming language it's written in
+#   donate:           # link to gitcoin or etherscan address
+#   opensource:       # true/false
+#   lukso_supported:  # true/false 
+#   supported-version # current LUKSO supported version
 
 - name: Grandine
   link: https://grandine.io/
@@ -20,6 +21,7 @@
   donate: 
   opensource: true
   lukso_supported: false
+  supported_version: 
 - name: Lighthouse
   link: https://lighthouse.sigmaprime.io/
   github: https://github.com/sigp/lighthouse/
@@ -31,6 +33,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
+  supported_version: v5.2.1
 - name: Lodestar
   link: https://lodestar.chainsafe.io/
   github: https://github.com/ChainSafe/lodestar
@@ -43,6 +46,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: false
+  supported_version: 
 - name: Nimbus
   link: https://nimbus.team/
   github: https://github.com/status-im/nimbus-eth2
@@ -54,6 +58,7 @@
   donate: 
   opensource: true
   lukso_supported: false
+  supported_version: 
 - name: Prysm
   link: https://prysmaticlabs.com/
   github: https://github.com/prysmaticlabs/prysm
@@ -66,6 +71,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
+  supported_version: v5.0.4
 - name: Teku
   link: https://consensys.net/knowledge-base/ethereum-2/teku/
   github: https://github.com/ConsenSys/teku
@@ -78,4 +84,5 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
+  supported_version: v24.6.1
 

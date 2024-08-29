@@ -3,7 +3,6 @@
   <div class="container py-5 my-5">
     <div class="text-center mb-5">
       <h2 class="h1 fw-bold mb-2 text-center">Client Distribution</h2>
-      <a href="https://www.rated.network/" target="_blank" class="btn btn-dark mt-2 mb-3">View Staking Pool Diversity</a>
       <p class="lead">Goal: &#60;33% <span class="mx-2">|</span> Danger: &#62;50%</p>
     </div>
     <div class="row justify-content-evenly">
@@ -31,32 +30,6 @@
                 Data may not be 100% accurate. (<a href="/methodology">Read more</a>)
               </div>
             </div>
-            <!-- Miga Labs Data -->
-            {%- assign visibility = "d-none" -%}
-            {%- if site.default_consensus_source == "migalabs" -%}
-              {%- assign visibility = "" -%}
-            {%- endif -%}
-            <div class="{{visibility}} text-start flex-grow-1 migalabs consensus-data">
-              {%- assign migalabs = site.data.migalabs | last -%}
-              {%- include partials/components/progress-bar.html data=migalabs.data.distribution -%}
-              <div class="text-center small">
-                Data provided by <a href="https://migalabs.io" target="_blank">Miga Labs</a> — updated daily. <br>
-                Data may not be 100% accurate. (<a href="/methodology">Read more</a>)
-              </div>
-            </div>
-            <!-- Rated Data -->
-            {%- assign visibility = "d-none" -%}
-            {%- if site.default_consensus_source == "rated" -%}
-              {%- assign visibility = "" -%}
-            {%- endif -%}
-            <div class="{{visibility}} text-start flex-grow-1 rated consensus-data">
-              {%- assign rated = site.data.rated | last -%}
-              {%- include partials/components/progress-bar.html data=rated.data.distribution -%}
-              <div class="text-center small">
-                Data provided by <a href="https://rated.network" target="_blank">Rated.Network</a> — updated daily. <br>
-                Data may not be 100% accurate. (<a href="/methodology">Read more</a>)
-              </div>
-            </div>
             <!-- Select Data Source -->
             <div id="dataSourceOptionsCC" class="mt-4 text-start text-sm-center">
               <div class="alert alert-info" role="alert">
@@ -76,18 +49,6 @@
                 {%- if site.default_consensus_source == "migalabs" -%}
                   {%- assign checked = "checked" -%}
                 {%- endif -%}
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="datasourcesCC" id="dataSource2" value="migalabs"  onclick="setDataSource('migalabs', 'consensus');" {{checked}}>
-                  <label class="form-check-label" for="dataSource2">Miga Labs</label>
-                </div>
-                {%- assign checked = "" -%}
-                {%- if site.default_consensus_source == "rated" -%}
-                  {%- assign checked = "checked" -%}
-                {%- endif -%}
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="datasourcesCC" id="dataSource3" value="rated"  onclick="setDataSource('rated', 'consensus');" {{checked}}>
-                  <label class="form-check-label" for="dataSource3">Rated.Network</label>
-                </div>
               </div>
             </div>
           </div>
@@ -114,7 +75,6 @@
               <div class="text-center small">
                 Data provided by <a href="https://github.com/ethereum/node-crawler" target="_blank">Ethereum's Node crawler</a> — updated automatically. <br>
                 Data may not be 100% accurate. (<a href="/methodology">Read more</a>) <br>
-                <p class="mt-2 mb-0 fw-bold">Based on {{node_crawler_coverage}}% self-reported network coverage with the remaining assumed to be mostly Geth.</p>
               </div>
             </div>
             <!-- Select Data Source -->
