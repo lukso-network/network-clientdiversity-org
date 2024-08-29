@@ -1,9 +1,11 @@
-FROM ruby:3.4.0-preview1-alpine3.20
+FROM ruby:3.3-alpine3.20
 
 WORKDIR /app
 
 ENV BUNDLE_PATH=/app/vendor/bundle
-ENV BUNDLER_VERSION='2.2.23'
+ENV BUNDLER_VERSION='2.5.14'
+
+COPY . /app
 
 RUN apk update && \
   apk upgrade && \
@@ -14,14 +16,10 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     truncate -s 0 /var/log/*log
 
 RUN bundle config set --local path 'vendor/bundle'
-COPY Gemfile Gemfile.lock /app/
-
 RUN bundle install
 
-USER root
+EXPOSE 4000
 
-COPY . /app
-
-RUN echo $GEM_PATH
-RUN $GEM_PATH
+ENTRYPOINT ["bundle"]
+CMD ["exec", "jekyll", "serve"]
 
