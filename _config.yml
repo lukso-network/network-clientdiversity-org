@@ -5,7 +5,7 @@ keywords: ethereum, lukso, client, diversity, eth, beacon, chain
 url: "https://clientdiversity.lukso.network"
 baseurl: ""
 permalink: pretty # Do not change this, it will break all links
-timezone: America/New_York
+timezone: Europe/Berlin
 markdown: kramdown
 livereload: false
 # port: 4400
@@ -18,27 +18,18 @@ redirect_from: # jekyll-redirect-from
   json: false
 
 # Global variables
-analytics_tag: |
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5YPSBBTM6W"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-5YPSBBTM6W');
-  </script>
+analytics_tag: ""
 default_consensus_source: blockprint # Options: blockprint, migalabs, rated 
 default_execution_source: node_crawler # Options: node crawler 
 
 # Notification Bar
 enable_notification: false
 notification_msg_id: 1 # must increment when creating a new message
-notification_msg: Join the community! <br><a href=""></a>.
+notification_msg: Join the community! <br><a href="https://discord.com/invite/lukso"></a>.
 notification_expiration: 3000000000 # epoch time in seconds
 
 # Toast
-enable_toast: true
+enable_toast: false
 toast_msg_id: 5 # must increment when creating a new message
 toast_title: Ether Alpha's Gitcoin grant is live!
 toast_msg: This round runs until November 30th. If you enjoy this or <a href='https://etheralpha.org/' target='_blank'>other tools</a> created, please support to help maintain existing projects and fund new ones. # Best when under 200 characters
@@ -51,5 +42,5 @@ toast_expiration: 1701302399 # epoch time in seconds
 nav_enabled: true
 
 # Links
-github_repo: https://github.com/etheralpha/clientdiversity-org
+github_repo: https://github.com/lukso-network/network-clientdiversity-website
 
