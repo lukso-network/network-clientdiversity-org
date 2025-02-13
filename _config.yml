@@ -2,7 +2,7 @@
 title: Client Diversity | LUKSO
 description: Improve LUKSO's resilience and protect the network by using a minority client.
 keywords: ethereum, lukso, client, diversity, eth, beacon, chain
-url: "" # This works because of GCP domains
+url: "https://clientdiversity.lukso.network"
 baseurl: ""
 permalink: pretty # Do not change this, it will break all links
 timezone: America/New_York
