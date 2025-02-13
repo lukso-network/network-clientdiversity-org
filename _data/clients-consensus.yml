@@ -33,7 +33,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
-  supported_version: v5.2.1
+  supported_version: v6.0.1
 - name: Lodestar
   link: https://lodestar.chainsafe.io/
   github: https://github.com/ChainSafe/lodestar
@@ -57,8 +57,8 @@
   lang: Nim
   donate: 
   opensource: true
-  lukso_supported: false
-  supported_version: 
+  lukso_supported: true
+  supported_version: v24.12.0
 - name: Prysm
   link: https://prysmaticlabs.com/
   github: https://github.com/prysmaticlabs/prysm
@@ -71,7 +71,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
-  supported_version: v5.0.4
+  supported_version: v5.2.0
 - name: Teku
   link: https://consensys.net/knowledge-base/ethereum-2/teku/
   github: https://github.com/ConsenSys/teku
@@ -84,5 +84,5 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
-  supported_version: v24.6.1
+  supported_version: v24.12.1
 

@@ -33,7 +33,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
-  supported_version: v24.7.0
+  supported_version: v24.12.2
 - name: Erigon
   link: https://github.com/ledgerwatch/erigon#erigon
   github: https://github.com/ledgerwatch/erigon
@@ -45,7 +45,7 @@
   donate: https://etherscan.io/address/0x8BFBB529A9E85fDC4b70A4FCdC0D68Bb298B8816 # funded by EF, Gnosis DAO
   opensource: true
   lukso_supported: true
-  supported_version: v2.60.4
+  supported_version: v2.61.0
 - name: EthereumJS
   link: https://ethereumjs.github.io/
   github: https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/client
@@ -69,7 +69,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
-  supported_version: v1.14.7
+  supported_version: v1.14.13
 - name: Nethermind
   link: http://nethermind.io/
   github: https://github.com/NethermindEth/nethermind
@@ -81,7 +81,7 @@
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
   lukso_supported: true
-  supported_version: v1.27.0
+  supported_version: v1.30.3
 - name: Nimbus
   link: https://nimbus.team/
   github: https://github.com/status-im/nimbus-eth1
