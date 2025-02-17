@@ -8,20 +8,18 @@
 #   lang              # programming language it's written in
 #   donate:           # link to gitcoin or etherscan address
 #   opensource:       # true/false
-#   lukso_supported:  # true/false 
 #   supported-version # current LUKSO supported version
 
-- name: Grandine
-  link: https://grandine.io/
-  github: https://github.com/grandinetech/grandine
-  docs: https://docs.grandine.io/
-  chat: https://discord.gg/H9XCdUSyZd
-  status: beta
-  support: Linux, Win, macOS
-  donate: 
-  opensource: true
-  lukso_supported: false
-  supported_version: 
+# - name: Grandine
+#   link: https://grandine.io/
+#   github: https://github.com/grandinetech/grandine
+#   docs: https://docs.grandine.io/
+#   chat: https://discord.gg/H9XCdUSyZd
+#   status: beta
+#   support: Linux, Win, macOS
+#   donate: 
+#   opensource: true
+#   supported_version: 
 - name: Lighthouse
   link: https://lighthouse.sigmaprime.io/
   github: https://github.com/sigp/lighthouse/
@@ -32,21 +30,19 @@
   lang: Rust
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
-  lukso_supported: true
   supported_version: v6.0.1
-- name: Lodestar
-  link: https://lodestar.chainsafe.io/
-  github: https://github.com/ChainSafe/lodestar
-  docs: https://hackmd.io/@philknows/rk5cDvKmK
-  # docs: https://chainsafe.github.io/lodestar/
-  chat: https://discord.gg/yjyvFRP
-  status: stable
-  support: Linux, Win, macOS # windows theoretically works but not tested yet https://github.com/ChainSafe/lodestar/issues/3519
-  lang: TypeScript
-  donate: https://protocol-guild.readthedocs.io/en/latest/index.html
-  opensource: true
-  lukso_supported: false
-  supported_version: 
+# - name: Lodestar
+#   link: https://lodestar.chainsafe.io/
+#   github: https://github.com/ChainSafe/lodestar
+#   docs: https://hackmd.io/@philknows/rk5cDvKmK
+#   # docs: https://chainsafe.github.io/lodestar/
+#   chat: https://discord.gg/yjyvFRP
+#   status: stable
+#   support: Linux, Win, macOS # windows theoretically works but not tested yet https://github.com/ChainSafe/lodestar/issues/3519
+#   lang: TypeScript
+#   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
+#   opensource: true
+#   supported_version: 
 - name: Nimbus
   link: https://nimbus.team/
   github: https://github.com/status-im/nimbus-eth2
@@ -57,7 +53,6 @@
   lang: Nim
   donate: 
   opensource: true
-  lukso_supported: true
   supported_version: v24.12.0
 - name: Prysm
   link: https://prysmaticlabs.com/
@@ -70,7 +65,6 @@
   # donate: funded # Supported by Offchain Labs
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
-  lukso_supported: true
   supported_version: v5.2.0
 - name: Teku
   link: https://consensys.net/knowledge-base/ethereum-2/teku/
@@ -83,6 +77,5 @@
   # donate: funded # funded by ConsenSys
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
-  lukso_supported: true
   supported_version: v24.12.1
 
