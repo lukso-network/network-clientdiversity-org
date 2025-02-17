@@ -8,20 +8,18 @@
 #   lang              # programming language it's written in
 #   donate:           # link to gitcoin or etherscan address
 #   opensource:       # true/false
-#   lukso_supported:  # whether LUKSO provides official configurations for a specific client: true/false
 #   supported-version # current LUKSO supported version
 
-- name: Akula
-  link: 
-  github: https://github.com/akula-bft/akula
-  docs: https://github.com/akula-bft/akula#running
-  chat: https://t.me/akula_bft
-  status: deprecated
-  support: 
-  donate: https://etherscan.io/address/0x048a9ea34FcE0B2828a2703e486648c21ACCCC1A
-  opensource: true
-  lukso_supported: false
-  supported_version: 
+# - name: Akula
+#   link: 
+#   github: https://github.com/akula-bft/akula
+#   docs: https://github.com/akula-bft/akula#running
+#   chat: https://t.me/akula_bft
+#   status: deprecated
+#   support: 
+#   donate: https://etherscan.io/address/0x048a9ea34FcE0B2828a2703e486648c21ACCCC1A
+#   opensource: true
+#   supported_version: 
 - name: Besu
   link: https://hyperledger.org/use/besu
   github: https://github.com/hyperledger/besu/
@@ -32,7 +30,6 @@
   lang: Java
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
-  lukso_supported: true
   supported_version: v24.12.2
 - name: Erigon
   link: https://github.com/ledgerwatch/erigon#erigon
@@ -44,20 +41,18 @@
   lang: Golang
   donate: https://etherscan.io/address/0x8BFBB529A9E85fDC4b70A4FCdC0D68Bb298B8816 # funded by EF, Gnosis DAO
   opensource: true
-  lukso_supported: true
   supported_version: v2.61.0
-- name: EthereumJS
-  link: https://ethereumjs.github.io/
-  github: https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/client
-  docs: https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/client/docs
-  chat: https://discord.gg/TNwARpR
-  status: alpha
-  support: Linux, Win, macOS
-  lang: TypeScript
-  donate: funded # funded by EF
-  opensource: true
-  lukso_supported: false
-  supported_version: 
+# - name: EthereumJS
+#   link: https://ethereumjs.github.io/
+#   github: https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/client
+#   docs: https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/client/docs
+#   chat: https://discord.gg/TNwARpR
+#   status: alpha
+#   support: Linux, Win, macOS
+#   lang: TypeScript
+#   donate: funded # funded by EF
+#   opensource: true
+#   supported_version: 
 - name: Geth
   link: https://geth.ethereum.org/
   github: https://github.com/ethereum/go-ethereum
@@ -68,7 +63,6 @@
   lang: Golang
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
-  lukso_supported: true
   supported_version: v1.14.13
 - name: Nethermind
   link: http://nethermind.io/
@@ -80,20 +74,18 @@
   lang: .NET
   donate: https://protocol-guild.readthedocs.io/en/latest/index.html
   opensource: true
-  lukso_supported: true
   supported_version: v1.30.3
-- name: Nimbus
-  link: https://nimbus.team/
-  github: https://github.com/status-im/nimbus-eth1
-  docs: https://github.com/status-im/nimbus-eth1/tree/master/doc
-  chat: https://discord.gg/qnjVyhatUa
-  status: pre-alpha
-  support: 
-  lang: Nim
-  donate: 
-  opensource: true
-  lukso_supported: false
-  supported_version: 
+# - name: Nimbus
+  # link: https://nimbus.team/
+  # github: https://github.com/status-im/nimbus-eth1
+  # docs: https://github.com/status-im/nimbus-eth1/tree/master/doc
+  # chat: https://discord.gg/qnjVyhatUa
+  # status: pre-alpha
+  # support: 
+  # lang: Nim
+  # donate: 
+  # opensource: true
+  # supported_version: 
 # - name: OpenEthereum
 #   link: https://openethereum.org/
 #   github: https://github.com/openethereum/openethereum
@@ -103,27 +95,25 @@
 #   support: Linux, Win, macOS
 #   donate: n/a
 #   opensource: true
-- name: Reth
-  link: https://paradigmxyz.github.io/reth/
-  github: https://github.com/paradigmxyz/reth
-  docs: https://paradigmxyz.github.io/reth/
-  chat: https://t.me/paradigm_reth
-  status: stable
-  support: Linux, Win, macOS, ARM
-  lang: Rust
-  donate:
-  opensource: true
-  lukso_supported: false
-  supported_version: 
-- name: Silkworm
-  link: https://github.com/torquem-ch/silkworm#about-silkworm
-  github: https://github.com/torquem-ch/silkworm
-  docs: https://github.com/torquem-ch/silkworm#source
-  chat: # invite only, channel in the erigon server
-  status: pre-alpha
-  support: Linux, Win, macOS
-  lang: C++
-  donate: https://etherscan.io/address/0x8BFBB529A9E85fDC4b70A4FCdC0D68Bb298B8816
-  opensource: true
-  lukso_supported: false
-  supported_version: 
+# - name: Reth
+#   link: https://paradigmxyz.github.io/reth/
+#   github: https://github.com/paradigmxyz/reth
+#   docs: https://paradigmxyz.github.io/reth/
+#   chat: https://t.me/paradigm_reth
+#   status: stable
+#   support: Linux, Win, macOS, ARM
+#   lang: Rust
+#   donate:
+#   opensource: true
+#   supported_version: 
+# - name: Silkworm
+#   link: https://github.com/torquem-ch/silkworm#about-silkworm
+#   github: https://github.com/torquem-ch/silkworm
+#   docs: https://github.com/torquem-ch/silkworm#source
+#   chat: # invite only, channel in the erigon server
+#   status: pre-alpha
+#   support: Linux, Win, macOS
+#   lang: C++
+#   donate: https://etherscan.io/address/0x8BFBB529A9E85fDC4b70A4FCdC0D68Bb298B8816
+#   opensource: true
+#   supported_version: 
